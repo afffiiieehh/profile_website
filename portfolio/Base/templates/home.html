@@ -1,0 +1,177 @@
+{%load static%}
+<!DOCTYPE html> 
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{%static 'css/style.css'%}">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- navbar section-->
+         <nav id="navbar" class="flex s-around bg-color">
+    <div class="left-nav">
+        <h2 class="t-white">portfolio</h2>
+    </div>
+
+    <ul class="right-nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">My Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    </nav>
+
+         <!-- home section-->
+        <section id="home" class="flex s-around sw-80 m-auto">
+            <div class="home-left flext items-center">
+                <div class="home-content">
+                    <h6 class="popinss">Hy, i'm </h6>
+                    <h1 class="t-white">Afnan</h1>
+                    <h4 class="poppins">Software Engineer</h4>
+                    <a href="{%static 'pdf/resume.pdf'%}" target="_blank">
+                        <button class="btn poppins">Resume</button>
+                    </a>
+
+                    <a class="btn live popinss" href="#contact">lets talk</a>
+                </div>
+            </div>
+
+            <div class="home-right flex s-center items-center">
+                <div class="circle flex flex s-center items-center" id="mainimage">
+                    <img src="{%static 'images/hee.jpg'%}" alt="picture">
+                </div>
+            </div>
+        </section>
+
+        <!-- about section-->
+         <section id="about">
+            <h1 class="t-center my-2 t-white f-2">About <menu></menu></h1>
+            <p class="t-white poppins">my name is <b>afnan</b> and i am a software engineer,
+            i have a passion for coding and i am always looking for new challenges to improve my skills and learn new technologies. i have experience in python, html, css, js and mysql. i am a quick learner and i am always willing to learn new things. i am a team player and i am always willing to help others.
+            </p>
+            <div class="about-container flex s-around">
+                <div class="about-left flex s-center items-center">
+                    <img class="home" src="{%static 'images/'%}" alt="my home">
+                </div>
+            </div>
+
+            <div class="about-right flex">  
+                <div class="about-content">
+                    <h1 class="t-white m-b-1 popinss">Afnan</h1>
+                    <p class="t-white popinss">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum officiis exercitationem distinctio voluptatibus vero praesentium asperiores nemo voluptatem, rem perferendis, reiciendis quos aperiam possimus quam numquam odit culpa unde explicabo.</p>
+                    <a href="btn" id="hireme" href="">Hire me </a>
+                </div>
+            </div>
+         </section>
+
+         <!--skills section -->
+         <section id="skills">
+            <h1 class="t-center my-2 t-white f-2">Skills</h1>
+            <div class="services-container flex s-around h-50">
+               <div class="skills-left flex s-center items-center">
+                    <img src="{%static 'images/'%}" alt="my room">
+               </div> 
+               <div class="skills-right flex items-center">
+                <div class="skills-container">
+                    <div class="java bar p-relative"><span class="bar-content left t-white">Core java</span>
+                    <span class="bar-content right-skills t-white">90%</span></div>
+
+                    <div class="html bar p-relative"><span class="bar-content left t-white">Core html</span>
+                    <span class="bar-content right-skills t-white">95%</span></div>
+
+                    <div class="css bar p-relative"><span class="bar-content left t-white">Core css</span>
+                    <span class="bar-content right-skills t-white">95%</span></div>
+
+                    <div class="js bar p-relative"><span class="bar-content left t-white">Core js</span>
+                    <span class="bar-content right-skills t-white">85%</span></div>
+
+                    <div class="sql bar p-relative"><span class="bar-content left t-white">Core Mysql</span>
+                    <span class="bar-content right-skills t-white">90%</span></div>
+
+                </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- projects section -->
+          <section id="project">
+                <h1 class="t-center my-2 t-white f-2">Projects</h1>
+                <div class="project-container flex s-center">
+                    <div class="project-item flex f-col s-center items-center">
+                        <h1 class="t-white popinss">Amazon clone</h1>
+                        <p class="t-white popinss">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, qui accusamus? Ducimus asperiores enim deleniti? Dolore, a! Quos illo voluptates soluta! Esse necessitatibus velit vel facere, autem beatae modi facilis.</p>
+                        <div class="button flex s-around">
+                            <a href="" target="_blank" class="btn-mx-1 m-top">Github</a>
+                        </div>
+               
+                    <div class="project-item flex f-col s-center items-center">
+                        <h1 class="t-white popinss">My profolio</h1>
+                        <p class="t-white popinss">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, qui accusamus? Ducimus asperiores enim deleniti? Dolore, a! Quos illo voluptates soluta! Esse necessitatibus velit vel facere, autem beatae modi facilis.</p>
+                        <div class="button flex s-around">
+                            <a href="" target="_blank" class="btn-mx-1 m-top">Github</a>
+                        </div>
+                    </div>
+
+                </div>
+          </section>
+
+          <!-- contact section -->
+           <section id="contact" class="m-b-1">
+            <h1 class="t-center my-2 t-white f-2">Contact me</h1>
+            <div class="contact-container flex s-around items-center">
+                <div class="from" id="contactfrom ">
+                    <form method="post">
+                        <div class="name form-div">
+                            {% csrf_token %}
+                            <input type="text" name="name" id="name" class="popinss" placeholder="Enter your name">
+                        </div>
+
+                        <div class="email form-div">
+                            <input type="email" name="email" id="" class="popinss" placeholder="Enter your email">
+                        </div>
+
+                        <div class="phone form-div">
+                            <input type="phone" name="number" id="" class="popinss" placeholder="Enter your phone number">
+                        </div>
+
+                        <div class="textarea form-div">
+                            <input  name="content" id="textarea" cols="30" rows="10 " class="popinss" placeholder="Enter your message">
+                        </div>
+                        <button type="submit" class="btn popinss" id="submit">Send</button>
+                    </form>
+
+                </div>
+            </div>
+           </section>
+         
+           <!-- footer section -->
+            <footer id="footer">
+                <ul class="flex s-center w-80 m-auto my-2 res">
+                    <li><a href="#home" class="popinss">Home</a></li>
+                    <li><a href="#about" class="popinss">About me</a></li>
+                    <li><a href="#skills" class="popinss">Skills</a></li>
+                    <li><a href="#project" class="popinss">Project</a></li>
+                    <li><a href="#porfolio" class="portfolio">Home</a></li>
+                </ul>
+                <ul class="flex s-center w-8 font-awesome">
+                    <a href="" target="_blank">
+                        <li><i class="fa-brads fa-linkedin-in"></i></li>
+                    </a>
+
+                    <a href="" target="_blank">
+                        <li><i class="fa-brads fa-github-in"></i></li>
+                    </a>
+
+                    <a href="" target="_blank">
+                        <li><i class="fa-brads fa-instagram-in"></i></li>
+                    </a>
+
+                </ul>
+                <p class="t-center my-2 popinss">copy; all rights reserved - <span class="cpy-white popins">Error by night</span></p>
+            </footer>
+
+
+    </body>
+    </html>
